@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block add %}
+<div>
+    <label for="">
+        <h3>商品列表</h3>
+    </label>
+</div>
+<div>
+    <input type="text" name="newgoodsname" class="newgoodsname" placeholder="商品名">
+    <input type="button" value="搜索" class="btn_select" name="btn_select">
+    <input type="button" value="更新" class="btn_update" name="btn_update">
+    <input type="button" value="删除" class="btn_del" name="btn_del">
+</div>
+<div>   <form action="" id="from_div" enctype="multipart/form-data" method="POST">
+            <input type="text" name="goodsname" class="goodsname" placeholder="商品名">
+            <input type="text" name="prodect_brand" class="prodect_brand" placeholder="名牌">
+            <input type="text" name="prodect_brief_info" class="prodect_brief_info" placeholder="简介">
+            <input type="text" name="canshu" class="canshu" placeholder="参数">
+            <input type="text" name="keywords" class="keywords" placeholder="关键字">
+            <input type="text" name="market_price" class="market_price" placeholder="市场价">
+            <input type="text" name="shop_price" class="shop_price" placeholder="商店价格">
+            <input type="text" name="counts" class="counts" placeholder="数量">
+            <input type="text" name="status" class="status" placeholder="状态">
+            <input type="file" name="img" class="img" placeholder="图片">
+            
+        </form>
+        <input type="submit" value="上传" class="btn_save" name="save_name">
+</div>
+{% endblock add %} {% block script %}
+{% comment %} <script src="{% static 'css/jquery.form.js' %}"></script> {% endcomment %}
+<script>
+    $(function () {
+        $('.btn_save').click(function () {
+            var fm  =new FormData($('#from_div')[0])
+            $.ajax({
+                url: 'http://127.0.0.1:8000/shoplist/insert/',
+                data:fm,
+                processData:false,
+                cache:false,
+                contentType:false,
+                type: 'POST',
+                success: function () {
+                    console.log("上传成功")
+                },error:function(){
+                console.log("上传失败")
+                }
+            });
+        });
+        $('.btn_select').click(function () {
+            username = $(".goodsname").val()
+            $.ajax({
+                url: 'http://127.0.0.1:8000/shoplist/select',
+                data: {
+                    'goodsname': username,
+                },
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    console.log(data)
+                }
+            });
+        });
+        $('.btn_update').click(function () {
+            username = $(".goodsname").val()
+            newusername = $(".newgoodsname").val()
+            $.ajax({
+                url: 'http://127.0.0.1:8000/shoplist/update/',
+                data: {
+                    'goodsname': username,
+                    'newgoodsname': newgoodsname,
+                },
+                type: 'POST',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    console.log(data)
+                    
+                }
+            });
+        });
+        $('.btn_del').click(function () {
+            username = $(".goodsname").val()
+            newusername = $(".newgoodsname").val()
+            $.ajax({
+                url: 'http://127.0.0.1:8000/shoplist/del/',
+                data: {
+                    'goodsname': username,
+                },
+                type: 'POST',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    console.log(data)
+                }
+            });
+        });
+    });
+
+</script> {% endblock script %}

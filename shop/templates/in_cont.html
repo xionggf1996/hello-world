@@ -1,0 +1,544 @@
+{% extends "base.html" %} {% block shangpin_add %}
+<h1>商品添加 &nbsp;
+    <small>Version 5.0</small>
+</h1>
+<!-- <button>商品批量上传</button> -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    商品批量上传
+</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    商品批量上传
+                </h4>
+            </div>
+            <div class="modal-body">
+                选择商品分类
+                <div class="row">
+                    <select id="querycourse" class="col-md-4 selectpicker" data-live-search="true" onchange="getListByOption()" name="fisrt_class">
+                        <option data-tokens="ketchup mustard" value="">一级分类</option>
+                    </select>
+
+                    <select id="queryItem" class="col-md-4 selectpicker" data-live-search="true" onchange="getListByChildOption()" name="second_class">
+                        <option data-tokens="ketchup mustard" value="">二级分类</option>
+                    </select>
+
+                    <select id="queryChildItem" class="col-md-4 selectpicker" data-live-search="true" name="third_class">
+                        <option data-tokens="ketchup mustard" value="">三级分类</option>
+                    </select>
+                </div>
+                <div>批量上传csv文件:
+                    <input type="file" name="upload_file">
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: center">
+                <input type="submit" value="提交" name="submit_btn" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <button>分类属性列表</button> -->
+<!-- <button class="btn btn-primary btn-lg"> -->
+<a class="btn btn-primary btn-lg" href="#">分类属性列表</a>
+<!-- </button> -->
+<style>
+    .biaoti div {
+        text-align: left;
+        margin: 5px 10px 5px 10px;
+    }
+
+    .select_style select {
+        text-align: left;
+        margin: 5px 0px 5px 0px;
+        font-size: 3px;
+        padding: 0px;
+    }
+
+    .checkbox div {
+        text-align: center;
+        padding: 0px
+    }
+</style>
+<!-- http://127.0.0.1:8000/shoplist/insert/ -->
+<form id="add_goods" action="" method="POST" enctype="multipart/form-data">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active">
+            <a href="#home" data-toggle="tab">基本信息</a>
+        </li>
+        <li>
+            <a href="#ios" data-toggle="tab">库存/规格</a>
+        </li>
+        <li>
+            <a href="#jmeter" data-toggle="tab">参数</a>
+        </li>
+        <li>
+            <a href="#ejb" data-toggle="tab">详情</a>
+        </li>
+        <li>
+            <a href="#dad" data-toggle="tab">轮播图</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane in active" id="home">
+
+            <div class="row biaoti">
+                <table class="table">
+                    <tr>
+                        <th>名称</th>
+                        <th>商家</th>
+                        <th>品牌</th>
+                        <th>编号</th>
+                        <th>简介</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="text" name="goodsname" placeholder="商品名称">
+                        </th>
+                        <th>
+                            <input type="text" name="shopname" placeholder="商家名称">
+                        </th>
+                        <th>
+                            <input type="text" name="brand" placeholder="品牌">
+                        </th>
+                        <th>
+                            <input type="text" name="numbering" placeholder="商品编号">
+                        </th>
+                        <th>
+                            <input type="text" name="brief_introduction" placeholder="商品简介">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-4">类别</div>
+                <div class="col-md-4">关键字</div>
+                <div class="col-md-4">类型</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 select_style">
+                    <select id="querycourse_1" class="col-md-3 selectpicker" data-live-search="true" onchange="getListByOption()" name="fisrt_class">
+                        <option data-tokens="ketchup mustard" value="">一级分类</option>
+                    </select>
+
+                    <select id="queryItem_1" class="col-md-3 selectpicker" data-live-search="true" onchange="getListByChildOption()" name="second_class">
+                        <option data-tokens="ketchup mustard" value="">二级分类</option>
+                    </select>
+
+                    <select id="queryChildItem_1" class="col-md-3 selectpicker" data-live-search="true" name="third_class">
+                        <option data-tokens="ketchup mustard" value="">三级分类</option>
+                    </select>
+
+                    <div class="col-md-3" style="text-align: left;margin: 5px 0px 5px 0px;font-size: 3px">
+                        <a class="editFenlei" id="editFenlei" href="#" style="margin-left:0%" data-toggle="modal" data-target="#feilei_myModal">编辑分类</a>
+                    </div>
+                    <div class="modal fade " id="feilei_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="false"></button>
+                                    <h2 class="modal-title" id="myModalLabel"> 商品批量上传</h2>
+                                </div>
+                                <div class="row">
+                                    <p col-md-4>大分类</p>
+                                    <div col-md-4></div>
+                                </div>
+                                <div class="modal-footer" style="text-align: center">
+                                    <input type="submit" value="提交" name="submit_btn" class="btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding:0px">
+                    <div style="padding :0px;max-width:900px;margin:auto;text-align:center;">
+                        <textarea id="hero-demo" name="tagEditor_cont"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-4 checkbox" style="text-align: left;padding: 0px">
+                    <div class="col-md-3">
+                        <input type="checkbox" name="class" value="精品">精品</div>
+                    <div class="col-md-3">
+                        <input type="checkbox" name="class" value="热销">热销</div>
+                    <div class="col-md-3">
+                        <input type="checkbox" name="class" value="普通商品">普通商品</div>
+                    <div class="col-md-3">
+                        <input type="checkbox" name="class" value="实体商品">实体商品</div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ios">
+
+            <table class="table">
+                <tr>
+                    <th>库存</th>
+                    <th>库存警告</th>
+                    <th>市场价格</th>
+                    <th>本店价格</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="number" name="kucun" value="0">
+                    </th>
+                    <th>
+                        <input type="number" name="kucun_j" value="0">
+                    </th>
+                    <th>
+                        <input type="number" step="0.01" name="market_price" value="0">
+                    </th>
+                    <th>
+                        <input type="number" step="0.01" name="shop_price" value="0">
+                    </th>
+                </tr>
+                <tr>
+                    <th>积分价</th>
+                    <th>送积分</th>
+                    <th>返利</th>
+                    <th>运费</th>
+                </tr>
+                <tr>
+                    <th>
+                        <input type="number" name="jifen" value="0">
+                    </th>
+                    <th>
+                        <input type="number" name="jifen_price" value="0">
+                    </th>
+                    <th>
+                        <input type="number" step="0.01" name="fanli" value="0">
+                    </th>
+                    <th>
+                        <input type="number" step="0.01" name="yunfei" value="0">
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="jmeter">
+
+            <div class="row insert">
+                <div class="col-md-3">
+                    <p>参数</p>
+                </div>
+                <div class="col-md-9">
+                    <p>参数值（参数1、2、3）</p>
+                </div>
+            </div>
+            <div class="row create_row" id="def_parameter" name="yincangbox">
+
+            </div>
+
+            <div style="margin: 10px" class="ceshi">
+                <button type="button" class="btn btn-default btn-sm addParamsBtn">
+                    <span class="glyphicon glyphicon-plus"></span>添加商品分类属性</button>
+
+                <button style="margin-left:10px;" type="button" class="btn addParamsBtn2">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加自定义参数</button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="ejb">
+            <div>
+                <h1>商品详情</h1>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="dad">
+            <div class="lunbotu">
+                <div id="wrapper">
+                    <h1>图样展示</h1>
+                    <div id="slider-wrap">
+                        <ul id="slider">
+                            <li>
+                                <div style="text-align: center;">
+                                    <img src="/static/img/111.jpg" style="width: 500px;height: 300px" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div style="text-align: center;">
+                                    <img src="/static/img/222.jpg" style="width: 500px;height: 300px" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div style="text-align: center;">
+                                    <img src="/static/img/333.jpg" style="width: 500px;height: 300px" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div style="text-align: center;">
+                                    <img src="/static/img/459395548107.jpg" style="width: 500px;height: 300px" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div style="text-align: center;">
+                                    <img src="/static/img/612511302484.jpg" style="width: 500px;height: 300px" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btns" id="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                        <div class="btns" id="previous">
+                            <i class="fa fa-arrow-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="file" name="img" class="img" placeholder="图片" style="width: 100%; border: solid black">
+        </div>
+        <!-- <div style="text-align: center"><button class="button">保存</button></div> -->
+        <div style="text-align: center" id="submit">
+            <input type="submit" class="btn_save">
+        </div>
+
+    </div>
+
+</form>
+{% endblock %} {% block script %}
+
+<script>
+
+    var aaa = 0
+
+    // jQuery UI autocomplete extension - suggest labels may contain HTML tags
+
+    // github.com/scottgonzalez/jquery-ui-extensions/blob/master/src/autocomplete/jquery.ui.autocomplete.html.js
+
+    var cache = {};
+
+    function googleSuggest(request, response) {
+
+        var term = request.term;
+
+        if (term in cache) { response(cache[term]); return; }
+
+        $.ajax({
+
+            url: 'http://query.yahooapis.com/v1/public/yql',
+
+            dataType: 'JSONP',
+
+            data: { format: 'json', q: 'select * from xml where url="http://google.com/complete/search?output=toolbar&q=' + term + '"' },
+
+            success: function (data) {
+
+                var suggestions = [];
+
+                try { var results = data.query.results.toplevel.CompleteSuggestion; } catch (e) { var results = []; }
+
+                $.each(results, function () {
+
+                    try {
+
+                        var s = this.suggestion.data.toLowerCase();
+
+                        suggestions.push({ label: s.replace(term, '<b>' + term + '</b>'), value: s });
+
+                    } catch (e) { }
+
+                });
+
+                cache[term] = suggestions;
+
+                response(suggestions);
+            }
+        });
+
+    }
+
+    $(function () {
+
+        $(".addParamsBtn2").click(function () {
+            console.log("0000000000000")
+            // <div class="col-md-8"><input name ="teg_editer" type = "text" style="width:100%"><input class=" xuan_canshu" type="checkbox">可选参数</div>
+            // var one_row ='\
+            // \
+            // \
+            // 可选参数</div>\
+            // '
+
+            aaa = aaa + 1
+
+            var one_row = '<div class =" aaaa row_one row" style="border:1px solid red;">\
+            <input class="col-md-3 canshu" type="text" name="canshuname">\
+            <div class="col-md-8">\
+            <textarea class="canshuzhi' + aaa + '" name="tagEditor_cont">\
+            </textarea>\
+            <input class=" xuan_canshu" type="checkbox">\
+            </div>\
+            <span class="col-md-1 btn glyphicon glyphicon-remove remove_btn"></span>\
+            </div>'
+
+
+            // setTimeout("alert('5 seconds!')",500)
+            //  alert("adasdas")
+            $(".create_row").append(one_row)
+
+
+            $(".remove_btn").click(function () {
+                // $("this").parent("div").remove(); 
+                // console.log("ertyuiopdfty")
+                index = $(this).parent().index()
+                console.log($(".aaaa")[index])
+                console.log('00000000000000000000000000000000000')
+                console.log($(".aaaa"))
+                $(".aaaa")[index].remove()
+
+            });
+            $('.canshuzhi' + aaa).tagEditor({
+                placeholder: '请输入参数',
+                autocomplete: { source: googleSuggest, minLength: 3, delay: 250, html: true, position: { collision: 'flip' } }
+            });
+        });
+
+        $('#hero-demo').tagEditor({
+
+            placeholder: 'Enter tags ...',
+
+            autocomplete: { source: googleSuggest, minLength: 3, delay: 250, html: true, position: { collision: 'flip' } }
+
+        });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+    $(function () {
+        $('#myTab li:eq(0) a').tab('show');
+    });
+    //   selecr 三级联动
+    $('#myModal').on('hidden.bs.modal', function (e) {
+        // do something...
+    })
+    var arr = ["C/C++", "JAVA", "PHP", "Javascript", ".Net"];
+    $(function () {
+        var $selectParent = $("#querycourse");
+        for (var i = 0; i < arr.length; i++) {
+            var $option = $("<option>" + arr[i] + "</option>");
+            $option.val(arr[i]);
+            $selectParent.append($option);
+        }
+    });
+    function getListByOption() {
+        var $select = $("#queryItem");
+        $select.empty();   //置空避免重复加载
+        var $selectChild = $("#queryChildItem");
+        $selectChild.empty();
+        for (var i = 0; i < 10; i++) {
+            var name = $("#querycourse").val() + "的第" + i + "课";
+            var $option = $("<option>" + name + "</option>");
+            $option.appendTo($select);
+        }
+        getListByChildOption();
+    }
+    function getListByChildOption() {
+        var $selectChild = $("#queryChildItem");
+        $selectChild.empty();
+
+        for (var j = 0; j < 10; j++) {
+            var nameChild = $("#queryItem").val() + "第" + j + "节";
+            var $optionChild = $("<option>" + nameChild + "</option>");
+            $selectChild.append($optionChild);
+        }
+    }
+
+
+
+
+
+    $(function () {
+        var $selectParent = $("#querycourse_1");
+        for (var i = 0; i < arr.length; i++) {
+            var $option = $("<option>" + arr[i] + "</option>");
+            $option.val(arr[i]);
+            $selectParent.append($option);
+        }
+    });
+    function getListByOption() {
+        var $select = $("#queryItem_1");
+        $select.empty();   //置空避免重复加载
+        var $selectChild = $("#queryChildItem_1");
+        $selectChild.empty();
+        for (var i = 0; i < 10; i++) {
+            var name = $("#querycourse_1").val() + "的第" + i + "课";
+            var $option = $("<option>" + name + "</option>");
+            $option.appendTo($select);
+        }
+        getListByChildOption();
+    }
+    function getListByChildOption() {
+        var $selectChild = $("#queryChildItem_1");
+        $selectChild.empty();
+
+        for (var j = 0; j < 10; j++) {
+            var nameChild = $("#queryItem_1").val() + "第" + j + "节";
+            var $optionChild = $("<option>" + nameChild + "</option>");
+            $selectChild.append($optionChild);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('.btn_save').click(function (event) {
+        event.preventDefault()
+        var fm = new FormData($('#add_goods')[0])
+        fm.forEach(function (a, b) {
+            console.log(a, b)
+        })
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/shoplist/insert/',
+            data: fm,
+            processData: false,
+            cache: false,
+            contentType: false,
+            type: 'POST',
+            success: function () {
+                console.log("上传成功")
+            }, error: function () {
+                console.log("上传失败")
+            }
+        });
+        return false
+    });
+
+        // $("#editFenlei").click(function () {
+        //     $('#feilei_myModal').modal('show')
+        // });
+        // $('.close').click(function(){
+        //     $('#feilei_myModal').modal('hide')
+        // })
+
+
+</script> {% endblock %}

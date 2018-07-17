@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贾福祥商城登录页面</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/message.css' %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            height: 50px;
+            width: 100%;
+        }
+        .xxx{
+            background-color: rgb(243, 243, 243);
+            height: 36px;
+            width: 100%;
+            line-height: 20px;
+            font-size: 14px;
+            color: rgb(123, 123, 123)
+        }
+        .header-left,.header-right{
+            display: inline;
+            padding-top: 10px;
+        }
+        .header-left{
+            padding-left: 100px;
+            float: left;
+        }
+        .header-right{
+            float: right;
+            padding-right: 100px;  
+        }
+        .header-right b{
+            cursor: pointer;
+        }
+        .header-right :hover{
+            color: rgb(226, 60, 64);
+        }
+        .content{
+            width: 100%;
+            height: 640px;
+        }
+        .content-left {
+            width: 782px;
+            height: 589px;
+        }
+
+        .content-left,
+        .content-right
+         {
+            display: inline;
+            float: left;
+        }
+
+        .content-right {
+            text-align: center;
+        }
+
+        .login {
+            border: 1px solid rgb(221, 221, 221);
+            width: 400px;
+            height: 380px;
+            margin: 140px 80px auto;
+        }
+
+        #user {
+            width: 340px;
+            height: 300px;
+            padding-left: 30px;
+            margin-left: 10px;
+            margin-top: 30px;
+
+        }
+
+        #user ul li {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        #user ul li input {
+            width: 304px;
+            height: 38px;
+            margin-top: 22px;
+            outline: none;
+        }
+
+        #user ul li b {
+            float: left;
+            padding-left: 20px;
+            font-size: 18px;
+        }
+
+        #user ul li span {
+            float: right;
+            padding-right: 20px;
+            font-size: 14px;
+            line-height: 26px;
+           
+        }
+        .outer{
+            position: relative;
+            margin:20px auto;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #ccc;
+            background: #ccc9c9;
+        }
+        .outer span,.filter-box,.inner{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .outer span{
+            display: block;
+            padding:4px  0 0 10px;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+        }
+        .filter-box{
+            width: 10px;
+            height: 100%;
+            background: green;
+            z-index: 9;
+        }
+        .outer.act span{
+            padding:0 36px 0 0;
+        }
+        .inner{
+            width: 36px;
+            height: 30px;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+            font-family: "宋体";
+            z-index: 10;
+            font-weight: bold;
+            color: #929292;
+        }
+        .outer.act .inner{
+            color: green;
+        }
+        .outer.act span{
+            z-index: 99;
+        }
+        .end{
+            width: 100%;
+            height: 72px;
+           border:1px solid rgb(237, 237, 237);
+           text-align: center;
+           line-height: 72px;
+        }
+        .end a{
+            text-decoration: none;
+        }
+        .end a span{
+            color: rgb(143, 143, 143);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    <div class="header">
+        <div class="xxx">
+                <div class="header-left">欢迎来到嘉福祥商城!</div>
+                <div class="header-right">
+                    <i class="header_phone"></i>在线客服 :
+                    <b style="font-size:16px;">400-654-1024</b>
+                </div>
+        </div>     
+    </div>
+    <div class="content">
+        <div class="content-left">
+            <img src="{% static 'img/login-img/login.png'%}" alt="">
+        </div>
+        <div class="content-right">
+            <div class="login">
+                <form id="user" method="POST">
+                    <ul>
+                        <li>
+                            <div>
+                                <b>会员登录</b>
+                                <span>还不是微分销会员?</span>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="text" name="username" placeholder="请输入用户名">
+                        </li>
+                        <li>
+                            <input type="password" name="pwd" placeholder="请输入密码">
+                        </li>
+                        <li>
+                            <div class="outer">
+                                <div class="filter-box"></div>
+                                <span>
+                                    滑动解锁
+                                </span>
+                                <div class="inner">&gt;&gt;</div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="button" name="btn_login" class="btn_login" value="登&nbsp;录" style="background-color:rgb(226, 60, 64); color:white;font-size:18px; border-radius:8px;">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <a href=""><span>豫ICP备18020508号-1</span> </a>
+    </div>
+    </div>
+</body>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/message.min.js' %}"></script>
+<script>
+    $(function(){
+        $(".inner").mousedown(function(e){
+            var el = $(".inner"),os = el.offset(),dx,$span=$(".outer>span"),$filter=$(".filter-box"),_differ=$(".outer").width()-el.width();
+            $(document).mousemove(function(e){
+                dx = e.pageX - os.left;
+                if(dx<0){
+                    dx=0;
+                }else if(dx>_differ){
+                    dx=_differ;
+                }
+                $filter.css('width',dx);
+                el.css("left",dx);
+            });
+            $(document).mouseup(function(e){
+                $(document).off('mousemove');
+                $(document).off('mouseup');
+                dx = e.pageX - os.left;
+                if(dx<_differ){
+                    dx=0;
+                    $span.html("滑动解锁");
+                }else if(dx>=_differ){
+                    dx=_differ;
+                    $(".outer").addClass("act");
+                    $span.html("验证通过！");
+                    el.html('&radic;');
+                }
+                $filter.css('width',dx);
+                el.css("left",dx);
+
+            })
+        })
+        $('.btn_login').click(function(){
+            var formData = new FormData($('#user')[0])
+            if($('.username').value=='' || $('.pwd').value ==''){
+                //console.log("")
+                $.message({
+                    message:'请输入用户名或密码...' ,
+                    type:'info'
+                });
+                return 
+            }
+            $.ajax({
+                url:'http://127.0.0.1:8000/checked/',
+                data:formData,
+                type:'post',
+                processData:false,
+                cache:false,
+                contentType:false,
+                success:function(data){
+                    data =JSON.parse(data)
+                    console.log(data)
+                    if(data.status="error"){
+                        console.log("shiba")
+                    }
+                    if(data.status="ok"){
+                        window.location.href ='http://127.0.0.1:8000/shoplist/goods_add/'
+                    }
+                    
+                },error:function(e){
+                    console.log(e)
+                    console.log("登录失败")     
+                }
+            })
+        });
+    })
+    
+ 
+</script>
+</html>

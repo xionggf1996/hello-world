@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% block user_manage %}
+<div class="int_div">
+    <label>
+        <span>用户名:</span>
+    </label>
+    <input type="text" name="user_name" class="user_name">
+    <label>
+        <span>手机号:</span>
+    </label>
+    <input type="text" name="user_name" class="user_name">
+    <button type="button" class="btn btn-default submit search">
+        <span class="glyphicon glyphicon-search">查询会员</span>
+    </button>
+</div>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th colspan="12">
+
+                <!-- <button class="btn btn-default trash AllDelete"><span class = "glyphicon glyphicon-trash">批量删除</span></button>
+                <button class="btn btn-default plus btn btn-primary" data-toggle="modal" data-target="#plusModal"><span class = "glyphicon glyphicon-plus">添加会员</span></button> -->
+                <label id="userNumber" class="count" style="float: right; padding-right: 4%;">共有数据12条</label>
+
+            </th>
+        </tr>
+        <tr id="natureEle">
+            <td class="info nature">
+                <input type="checkbox" id="checkbox-all">
+            </td>
+            <td class="info nature">序号</td>
+            <td class="info nature">微信ID</td>
+            <td class="info nature">会员名</td>
+            <td class="info nature">密码</td>
+            <td class="info nature">电话</td>
+            <td class="info nature">微信</td>
+            <td class="info nature">头像</td>
+            <td class="info nature">账户余额</td>
+            <td class="info nature">等级</td>
+            <td class="info nature">激活码</td>
+            <td class="info nature">编辑</td>
+        </tr>
+    </tbody>
+    <tbody id="userTable">
+        <tr class="mytr" no="1" userid="oCBm3v5KVJKJ15MwYoMbEJsxCOdY" username="111" pwd="" phone="" wxid="oCBm3v5KVJKJ15MwYoMbEJsxCOdY"
+            acountmoney="3600" headimg="http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIiboSzaBLOSW0WQtibHIoSG4XMibaoXwbUO6esbH3oYpNg7A9GPrHslhmHkG4HTgToNHx0VTbibOPuaA/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">1</td>
+            <td class="info ele">oCBm3v5KVJKJ15MwYoMbEJsxCOdY</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3v5KVJKJ15MwYoMbEJsxCOdY</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIiboSzaBLOSW0WQtibHIoSG4XMibaoXwbUO6esbH3oYpNg7A9GPrHslhmHkG4HTgToNHx0VTbibOPuaA/132"
+                    alt="">
+            </td>
+            <td class="info ele">3600</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="2" userid="oCBm3vyhko8hWDd5iM4XaDJdQDV4" username="111" pwd="" phone="" wxid="oCBm3vyhko8hWDd5iM4XaDJdQDV4"
+            acountmoney="1907" headimg="http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicBg20W2tb6AAsTrhQBnYdCX8h0nUTd0wVh1fJaial8dc1T50mwwVoD6kwATTj0zL0fztZR6JPWSIlJujSyoq6Nog/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">2</td>
+            <td class="info ele">oCBm3vyhko8hWDd5iM4XaDJdQDV4</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vyhko8hWDd5iM4XaDJdQDV4</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicBg20W2tb6AAsTrhQBnYdCX8h0nUTd0wVh1fJaial8dc1T50mwwVoD6kwATTj0zL0fztZR6JPWSIlJujSyoq6Nog/132"
+                    alt="">
+            </td>
+            <td class="info ele">1907</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="3" userid="oCBm3vy-463F1qU6nazVmmks5MrI" username="111" pwd="" phone="" wxid="oCBm3vy-463F1qU6nazVmmks5MrI"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/AibQnhkxzJ338md0iakCfZYs3f8SNgYzURhbA0T9eQOKXSA0O1icHcl5YM4UyChbx4Tl5elT08OyIGKoLCcc7Xr0ysvnRnQUSJz/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">3</td>
+            <td class="info ele">oCBm3vy-463F1qU6nazVmmks5MrI</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vy-463F1qU6nazVmmks5MrI</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/AibQnhkxzJ338md0iakCfZYs3f8SNgYzURhbA0T9eQOKXSA0O1icHcl5YM4UyChbx4Tl5elT08OyIGKoLCcc7Xr0ysvnRnQUSJz/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="4" userid="oCBm3v7PMJ0LsPxA4O65IefTQIIg" username="111" pwd="" phone="" wxid="oCBm3v7PMJ0LsPxA4O65IefTQIIg"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLBHkKRck1vWvZiaIVlQicibWcCbxyqcQEx2ZvTWJXicg5NhkIeuuwLGM6dnV0kq2tJtibmwqXsVnqmu8DbqzmOfRqA3w6HbRkC8Qjxs/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">4</td>
+            <td class="info ele">oCBm3v7PMJ0LsPxA4O65IefTQIIg</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3v7PMJ0LsPxA4O65IefTQIIg</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLBHkKRck1vWvZiaIVlQicibWcCbxyqcQEx2ZvTWJXicg5NhkIeuuwLGM6dnV0kq2tJtibmwqXsVnqmu8DbqzmOfRqA3w6HbRkC8Qjxs/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="5" userid="oCBm3v3EkQiyoH3w13_GlyJxyyLg" username="111" pwd="" phone="" wxid="oCBm3v3EkQiyoH3w13_GlyJxyyLg"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicBg20W2tb6AAlmicuLIAZRAsVibiahZK7wOm0d5ibFZefE34d5dvxZSxIYZeNyPchgSpRMH8VKOPyWEUrGNGSGjkiazd/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">5</td>
+            <td class="info ele">oCBm3v3EkQiyoH3w13_GlyJxyyLg</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3v3EkQiyoH3w13_GlyJxyyLg</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicBg20W2tb6AAlmicuLIAZRAsVibiahZK7wOm0d5ibFZefE34d5dvxZSxIYZeNyPchgSpRMH8VKOPyWEUrGNGSGjkiazd/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="6" userid="oCBm3vw8QiGzRkzCDJZwjtLoViiE" username="111" pwd="" phone="" wxid="oCBm3vw8QiGzRkzCDJZwjtLoViiE"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/cesKXYwGrfYodVxz5khibhdAYibPRePl95Xdxpj1hyOMo2GcFCdlibWq6bjP2OqSJDibmcRSVwkGUMTqXB2VDmicOyNy299kBx54I/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">6</td>
+            <td class="info ele">oCBm3vw8QiGzRkzCDJZwjtLoViiE</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vw8QiGzRkzCDJZwjtLoViiE</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/cesKXYwGrfYodVxz5khibhdAYibPRePl95Xdxpj1hyOMo2GcFCdlibWq6bjP2OqSJDibmcRSVwkGUMTqXB2VDmicOyNy299kBx54I/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="7" userid="oCBm3vyM-iZ5QKoykNWj_9HCJSW8" username="111" pwd="" phone="" wxid="oCBm3vyM-iZ5QKoykNWj_9HCJSW8"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/INhnzBibREQ1dJZ3VGdsJBzhz9oeljlJfkIm8oicTKFhWrd9zWIJPKJrM3em8C1HOzNI3zcHozkNMYjjwOvN6Co0AMUeUEF0HL/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">7</td>
+            <td class="info ele">oCBm3vyM-iZ5QKoykNWj_9HCJSW8</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vyM-iZ5QKoykNWj_9HCJSW8</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/INhnzBibREQ1dJZ3VGdsJBzhz9oeljlJfkIm8oicTKFhWrd9zWIJPKJrM3em8C1HOzNI3zcHozkNMYjjwOvN6Co0AMUeUEF0HL/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="8" userid="oCBm3vxlqwJjUbBDshKiQ50IFSjs" username="111" pwd="" phone="" wxid="oCBm3vxlqwJjUbBDshKiQ50IFSjs"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicD2z7ic54aGSqeFLOSklGYvHjbMFCMLar1K0xbnQF5eY5gtxoachNbdrYUjoVOC5FEyiab0RytPncsS3q1QPsnDBe/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">8</td>
+            <td class="info ele">oCBm3vxlqwJjUbBDshKiQ50IFSjs</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vxlqwJjUbBDshKiQ50IFSjs</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/X3Ke3FlOxicD2z7ic54aGSqeFLOSklGYvHjbMFCMLar1K0xbnQF5eY5gtxoachNbdrYUjoVOC5FEyiab0RytPncsS3q1QPsnDBe/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="9" userid="oCBm3vzlQ470If7UO6eaTAtGFdCk" username="111" pwd="" phone="" wxid="oCBm3vzlQ470If7UO6eaTAtGFdCk"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/cesKXYwGrfYqvHNd3GwMARhLqxzlhx6mia1mfosnQVaUoSEQ5ccZ4l7otMDEOse3boq3lJiazdafWIIKEvyZIp4ibwsBnoDRgA4/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">9</td>
+            <td class="info ele">oCBm3vzlQ470If7UO6eaTAtGFdCk</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vzlQ470If7UO6eaTAtGFdCk</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/cesKXYwGrfYqvHNd3GwMARhLqxzlhx6mia1mfosnQVaUoSEQ5ccZ4l7otMDEOse3boq3lJiazdafWIIKEvyZIp4ibwsBnoDRgA4/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+        <tr class="mytr" no="10" userid="oCBm3vwF-wUb32e_OHkaOuVVH42Y" username="111" pwd="" phone="" wxid="oCBm3vwF-wUb32e_OHkaOuVVH42Y"
+            acountmoney="0" headimg="http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELgdMr4r5cVvn2libXq6EianyFxkvc5SN3zIenGJSsfCDG76K6YzbpbAGlCo504fLeCBlXysOS4pOYQ/132"
+            power="" activecode="">
+            <td class="info ele">
+                <input class="checkbox-one" name="checkbox-one" type="checkbox">
+            </td>
+            <td class="info ele">10</td>
+            <td class="info ele">oCBm3vwF-wUb32e_OHkaOuVVH42Y</td>
+            <td class="info ele">111</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">oCBm3vwF-wUb32e_OHkaOuVVH42Y</td>
+            <td class="info ele">
+                <img height="40px" width="40px" src="http://www.dangsh.top/static/myfile/http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELgdMr4r5cVvn2libXq6EianyFxkvc5SN3zIenGJSsfCDG76K6YzbpbAGlCo504fLeCBlXysOS4pOYQ/132"
+                    alt="">
+            </td>
+            <td class="info ele">0</td>
+            <td class="info ele"></td>
+            <td class="info ele"></td>
+            <td class="info ele">预留</td>
+        </tr>
+    </tbody>
+
+</table>
+{% endblock user_manage %}
