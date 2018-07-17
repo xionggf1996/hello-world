@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://www.jq22.com/yanshi14757 -->
+<html style="padding-bottom: 54px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>jQuery cityPicker城市模拟原生下拉选择插件</title>
+    <meta name="description" content="城市选择、三级联动、支持搜索功能">
+    <meta name="keywords" content="城市选择，城市，城市联动，cityPicker，搜索功能三级联动，jquery,jquery插件">
+    <link rel="Shortcut icon" href="http://www.jq22.com/favicon.ico">
+    <link href="./jQuery cityPicker城市模拟原生下拉选择插件_files/demo.css" rel="stylesheet" media="all">
+    <!--[if IE]>
+			
+			<style type="text/css">			
+				li.purchase a {
+					padding-top: 5px;
+					background-position: 0px -4px;
+				}
+				
+				li.remove_frame a {
+					padding-top: 5px;
+					background-position: 0px -3px;
+				}						
+			</style>
+			
+		<![endif]-->
+    <style>
+        .fdad a {
+            color: #000;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .fdad {
+            top: 66px;
+        }
+
+        .xgcj li {
+            font-size: 14px;
+            line-height: 20px;
+            list-style-type: none;
+            transition: all 1s ease 0s;
+            border-radius: 5px;
+        }
+
+        .xgcj li:hover {
+            background-color: #e4e4e4;
+        }
+
+        .xgcj {
+            background-color: rgba(255, 255, 255, .3);
+            overflow-x: hidden;
+        }
+
+        .xgcj ul {
+            padding: 10px
+        }
+
+        .xgcj h3 {
+            line-height: 30px;
+        }
+
+        .xgcj p {
+            padding-left: 20px;
+            font-size: 13px;
+            display: none;
+        }
+
+        .xgcj span {
+            font-family: "宋体";
+        }
+
+        .xgcj li:hover p {
+            display: block;
+        }
+    </style>
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/osd.js.下载"></script>
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/ca-pub-2935286260943234.js.下载"></script>
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/hm.js.下载"></script>
+    <script type="text/javascript">
+        var txt = "http://www.jq22.com/demo/cityPicker201707132212";
+        window.g1 = txt.substr(0, 3);
+        window.g2 = txt.substr(0, 19);
+    </script>
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/pace.min.js.下载" charset="gbk"></script>
+    <link href="./jQuery cityPicker城市模拟原生下拉选择插件_files/pace-theme-barber-shop.css" rel="stylesheet">
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/jquery.min.js.下载"></script>
+    <script src="./jQuery cityPicker城市模拟原生下拉选择插件_files/jquery.qrcode.min.js.下载"></script>
+    <script type="text/javascript">
+
+        var theme_list_open = false;
+
+        $(document).ready(function () {
+            function fixHeight() {
+                var headerHeight = $("#switcher").height();
+                $("#iframe").attr("height", $(window).height() - 54 + "px");
+            }
+            $(window).resize(function () {
+                fixHeight();
+            }).resize();
+
+            $('.icon-monitor').addClass('active');
+
+            $(".icon-mobile-3").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-2").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-1").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width');
+                $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-tablet").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('tablet-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-monitor").click(function () {
+                $("#by").css("overflow-y", "hidden");
+                $('#iframe-wrap').removeClass().addClass('full-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function Responsive($a) {
+            if ($a == true) $("#Device").css("opacity", "100");
+            if ($a == false) $("#Device").css("opacity", "0");
+            $('#iframe-wrap').removeClass().addClass('full-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        };
+    </script>
+    <link rel="preload" href="./jQuery cityPicker城市模拟原生下拉选择插件_files/integrator.js.下载" as="script">
+    <script type="text/javascript" src="./jQuery cityPicker城市模拟原生下拉选择插件_files/integrator.js.下载"></script>
+</head>
+
+<body id="by" style="overflow-y: hidden" class="  pace-done">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div id="switcher">
+        <div class="center">
+            <ul>
+                <li class="logoTop" id="sj2">
+                    <a href="http://www.jq22.com/jquery-info14757">jQuery cityPicker城市模拟原生下拉选择插件</a>
+                </li>
+                <div id="Device">
+                    <li class="device-monitor">
+                        <a href="javascript:">
+                            <div class="icon-monitor active">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="device-mobile">
+                        <a href="javascript:">
+                            <div class="icon-tablet">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="device-mobile">
+                        <a href="javascript:">
+                            <div class="icon-mobile-1">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="device-mobile-2">
+                        <a href="javascript:">
+                            <div class="icon-mobile-2">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="device-mobile-3">
+                        <a href="javascript:">
+                            <div class="icon-mobile-3">
+                            </div>
+                        </a>
+                    </li>
+                </div>
+                <li class="top2" id="sj">
+                    <a href="http://www.jq22.com/yanshi14757#">手机二维码预览</a>
+                    <div class="vm">
+                        <div id="output">
+                            <canvas width="150" height="150"></canvas>
+                        </div>
+                        <p style="color: #808080">扫一扫，直接在手机上打开</p>
+                    </div>
+                </li>
+                <script>
+                    jQuery('#output').qrcode({ width: 150, height: 150, text: window.location.href });
+                </script>
+                <li class="remove_frame" style="display:n">
+                    <a href="http://www.jq22.com/demo/cityPicker201707132212" title="移除框架"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="iframe-wrap">
+        <iframe id="iframe" src="./jQuery cityPicker城市模拟原生下拉选择插件_files/cityPicker201707132212.html" frameborder="0" width="100%"
+            height="572px"></iframe>
+    </div>
+    <div class="fdad">
+        <div class="fdl">Advertisement</div>
+        <div class="fdr">x</div>
+        <div class="fdadnr">
+            <script async="" src="./jQuery cityPicker城市模拟原生下拉选择插件_files/adsbygoogle.js.下载"></script>
+
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-2935286260943234" data-ad-slot="6063645905"
+                data-adsbygoogle-status="done">
+                <ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;">
+                    <ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;">
+                        <iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0"
+                            allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}"
+                            id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:336px;height:280px;" src="./jQuery cityPicker城市模拟原生下拉选择插件_files/saved_resource.html"></iframe>
+                    </ins>
+                </ins>
+            </ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <div class="xgcj">
+                <ul>
+                    <div style="width:100%">
+                        <div style="float:left">
+                            <h3>相关插件</h3>
+                        </div>
+                        <div style="clear: left;"></div>
+                    </div>
+                    <li>
+                        <a href="http://www.jq22.com/jquery-info7839">
+                            <span>&gt;</span> 移动端城市选择</a>
+                        <p>手机移动端城市选择</p>
+                    </li>
+                    <li>
+                        <a href="http://www.jq22.com/jquery-info14043">
+                            <span>&gt;</span> jQuery商品发布三级联动菜单代码</a>
+                        <p>jQuery商品发布三级联动菜单代码是一款点击输入框弹出联动菜单，购物商城或者分类比较多的网站经常用到的产品商品分类选择联动菜单js代码。</p>
+                    </li>
+                    <li>
+                        <a href="http://www.jq22.com/jquery-info747">
+                            <span>&gt;</span> 仿招聘网站选择地区、选择行业、选择职位效果</a>
+                        <p>仿招聘网站选择地区、选择行业、选择职位效果</p>
+                    </li>
+                    <li>
+                        <a href="http://www.jq22.com/jquery-info3810">
+                            <span>&gt;</span> jquery弹出职业等多选框</a>
+                        <p>招聘网上的职业地点弹框源码</p>
+                    </li>
+                    <li>
+                        <a href="http://www.jq22.com/jquery-info18022">
+                            <span>&gt;</span> div模拟radio和checkbox</a>
+                        <p>简单实用的自定义radio和checkbox</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".fdr").click(function () {
+                    $(".fdad").hide();
+                });
+            });
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?b3a3fc356d0af38b811a0ef8d50716b8";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+
+
+    </div>
+    <iframe id="google_osd_static_frame_1009754874654" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"
+        src="./jQuery cityPicker城市模拟原生下拉选择插件_files/saved_resource(1).html"></iframe>
+</body>
+
+</html>

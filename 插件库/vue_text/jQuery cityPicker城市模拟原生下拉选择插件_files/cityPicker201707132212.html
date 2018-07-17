@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.jq22.com/demo/cityPicker201707132212/ -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>城市下拉选择组件</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+
+<body style="">
+	<div class="container">
+		<h3>模拟城市-不自动选择第一项/无搜索/四级城市</h3>
+		<div class="dome-main">
+			<div class="city-picker-selector" id="city-picker-selector1">
+				<div class="selector-item storey province" data-index="0">
+					<a href="javascript:;" class="selector-name reveal disabled">广东</a>
+					<input type="hidden" name="userProvinceId" class="input-price val-error" value="440000" data-required="userProvinceId"
+					 disabled="">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller" data-id="110000" data-title="北京">北京</li>
+							<li class="caller" data-id="120000" data-title="天津">天津</li>
+							<li class="caller" data-id="130000" data-title="河北">河北</li>
+							<li class="caller" data-id="140000" data-title="山西">山西</li>
+							<li class="caller active" data-id="150000" data-title="内蒙古">内蒙古</li>
+							<li class="caller" data-id="210000" data-title="辽宁">辽宁</li>
+							<li class="caller" data-id="220000" data-title="吉林">吉林</li>
+							<li class="caller" data-id="230000" data-title="黑龙江">黑龙江</li>
+							<li class="caller" data-id="310000" data-title="上海">上海</li>
+							<li class="caller" data-id="320000" data-title="江苏">江苏</li>
+							<li class="caller" data-id="330000" data-title="浙江">浙江</li>
+							<li class="caller" data-id="340000" data-title="安徽">安徽</li>
+							<li class="caller" data-id="350000" data-title="福建">福建</li>
+							<li class="caller" data-id="360000" data-title="江西">江西</li>
+							<li class="caller" data-id="370000" data-title="山东">山东</li>
+							<li class="caller" data-id="410000" data-title="河南">河南</li>
+							<li class="caller" data-id="420000" data-title="湖北">湖北</li>
+							<li class="caller" data-id="430000" data-title="湖南">湖南</li>
+							<li class="caller active" data-id="440000" data-title="广东">广东</li>
+							<li class="caller" data-id="450000" data-title="广西">广西</li>
+							<li class="caller" data-id="460000" data-title="海南">海南</li>
+							<li class="caller" data-id="500000" data-title="重庆">重庆</li>
+							<li class="caller" data-id="510000" data-title="四川">四川</li>
+							<li class="caller" data-id="520000" data-title="贵州">贵州</li>
+							<li class="caller" data-id="530000" data-title="云南">云南</li>
+							<li class="caller" data-id="540000" data-title="西藏">西藏</li>
+							<li class="caller" data-id="610000" data-title="陕西">陕西</li>
+							<li class="caller" data-id="620000" data-title="甘肃">甘肃</li>
+							<li class="caller" data-id="630000" data-title="青海">青海</li>
+							<li class="caller" data-id="640000" data-title="宁夏">宁夏</li>
+							<li class="caller" data-id="650000" data-title="新疆">新疆</li>
+							<li class="caller" data-id="710000" data-title="台湾">台湾</li>
+							<li class="caller" data-id="810000" data-title="香港">香港</li>
+							<li class="caller" data-id="820000" data-title="澳门">澳门</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey city" data-index="1">
+					<a href="javascript:;" class="selector-name reveal disabled">深圳</a>
+					<input type="hidden" name="userCityId" class="input-price val-error" value="440300" data-required="userCityId"
+					 disabled="">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller" data-id="440100" data-title="广州" data-code="020">广州</li>
+							<li class="caller" data-id="440200" data-title="韶关" data-code="0751">韶关</li>
+							<li class="caller active" data-id="440300" data-title="深圳" data-code="0755">深圳</li>
+							<li class="caller" data-id="440400" data-title="珠海" data-code="0756">珠海</li>
+							<li class="caller" data-id="440500" data-title="汕头" data-code="0754">汕头</li>
+							<li class="caller" data-id="440600" data-title="佛山" data-code="0757">佛山</li>
+							<li class="caller" data-id="440700" data-title="江门" data-code="0750">江门</li>
+							<li class="caller" data-id="440800" data-title="湛江" data-code="0759">湛江</li>
+							<li class="caller" data-id="440900" data-title="茂名" data-code="0668">茂名</li>
+							<li class="caller" data-id="441200" data-title="肇庆" data-code="0758">肇庆</li>
+							<li class="caller" data-id="441300" data-title="惠州" data-code="0752">惠州</li>
+							<li class="caller" data-id="441400" data-title="梅州" data-code="0753">梅州</li>
+							<li class="caller" data-id="441500" data-title="汕尾" data-code="0660">汕尾</li>
+							<li class="caller" data-id="441600" data-title="河源" data-code="0762">河源</li>
+							<li class="caller" data-id="441700" data-title="阳江" data-code="0662">阳江</li>
+							<li class="caller" data-id="441800" data-title="清远" data-code="0763">清远</li>
+							<li class="caller" data-id="441900" data-title="东莞" data-code="0769">东莞</li>
+							<li class="caller" data-id="442000" data-title="中山" data-code="0760">中山</li>
+							<li class="caller" data-id="445100" data-title="潮州" data-code="0768">潮州</li>
+							<li class="caller" data-id="445200" data-title="揭阳" data-code="0633">揭阳</li>
+							<li class="caller" data-id="445300" data-title="云浮" data-code="0766">云浮</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey district" data-index="2">
+					<a href="javascript:;" class="selector-name reveal disabled">罗湖</a>
+					<input type="hidden" name="userDistrictId" class="input-price val-error" value="440303" data-required="userDistrictId"
+					 disabled="">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller active" data-id="440303" data-title="罗湖" data-code="0755">罗湖</li>
+							<li class="caller" data-id="440304" data-title="福田" data-code="0755">福田</li>
+							<li class="caller" data-id="440305" data-title="南山" data-code="0755">南山</li>
+							<li class="caller" data-id="440306" data-title="宝安" data-code="0755">宝安</li>
+							<li class="caller" data-id="440307" data-title="龙岗" data-code="0755">龙岗</li>
+							<li class="caller" data-id="440308" data-title="盐田" data-code="0755">盐田</li>
+							<li class="caller" data-id="440309" data-title="光明新区" data-code="0755">光明新区</li>
+							<li class="caller" data-id="440310" data-title="坪山新区" data-code="0755">坪山新区</li>
+							<li class="caller" data-id="440311" data-title="大鹏新区" data-code="0755">大鹏新区</li>
+							<li class="caller" data-id="440312" data-title="龙华新区" data-code="0755">龙华新区</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey street" data-index="3">
+					<a href="javascript:;" class="selector-name reveal disabled">桂园</a>
+					<input type="hidden" name="userStreet" class="input-price val-error" value="440303001" data-required="userStreet"
+					 disabled="">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller active" data-id="440303001" data-title="桂园">桂园</li>
+							<li class="caller" data-id="440303002" data-title="黄贝">黄贝</li>
+							<li class="caller" data-id="440303003" data-title="东门">东门</li>
+							<li class="caller" data-id="440303004" data-title="翠竹">翠竹</li>
+							<li class="caller" data-id="440303005" data-title="南湖">南湖</li>
+							<li class="caller" data-id="440303006" data-title="笋岗">笋岗</li>
+							<li class="caller" data-id="440303007" data-title="东湖">东湖</li>
+							<li class="caller" data-id="440303008" data-title="莲塘">莲塘</li>
+							<li class="caller" data-id="440303009" data-title="东晓">东晓</li>
+							<li class="caller" data-id="440303010" data-title="清水河">清水河</li>
+						</ul>
+					</div>
+				</div>
+				<input type="hidden" role="code" name="cityCode" value="">
+			</div>
+			<div class="btn-cont">
+				<button class="btn btn-setcity">设置城市</button>
+				<button class="btn btn-bg-1 btn-obtain">获取城市</button>
+				<button class="btn btn-bg-2 btn-prohibit">禁止状态</button>
+				<button class="btn btn-bg-3 btn-current">可用状态</button>
+			</div>
+			<div class="code">
+				<a href="javascript:;" class="show-code">code</a>
+				<pre><code>var selector1 = $('#city-picker-selector1').cityPicker({
+					dataJson: cityData,
+					renderMode: true,
+					search: false,
+					autoSelected: false,
+					code: 'cityCode',
+					level: 4,
+					onChoiceEnd: function() {
+						console.log(this.values)
+					}
+				});
+
+				// 设置城市
+				selector1.setCityVal('广东省, 广州市, 天河区, 天园街道');
+
+				// 省份选择的回调
+				$('#city-picker-selector1').on('choose-province.citypicker', function(event, tagert, values) {
+					console.log(values);
+				});
+	
+				// 城市选择的回调
+				$('#city-picker-selector1').on('choose-city.citypicker', function(event, tagert, values) {
+					console.log(values);
+				});
+	
+				// 区县选择的回调
+				$('#city-picker-selector1').on('choose-district.citypicker', function(event, tagert, values) {
+					console.log(values);
+				});
+
+				// 街道选择的回调
+				$('#city-picker-selector1').on('choose-street.citypicker', function(event, tagert, values) {
+					console.log(values);
+				});</code></pre>
+			</div>
+		</div>
+		<h3>模拟城市-自动选择第一项/无搜索/三级城市</h3>
+		<div class="dome-main">
+			<div class="city-picker-selector" id="city-picker-selector2">
+				<div class="selector-item storey province" data-index="0">
+					<a href="javascript:;" class="selector-name reveal">天津市</a>
+					<input type="hidden" name="userProvinceId" class="input-price val-error" value="120000" data-required="userProvinceId">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller" data-id="110000" data-title="北京市">北京市</li>
+							<li class="caller active" data-id="120000" data-title="天津市">天津市</li>
+							<li class="caller" data-id="130000" data-title="河北省">河北省</li>
+							<li class="caller" data-id="140000" data-title="山西省">山西省</li>
+							<li class="caller" data-id="150000" data-title="内蒙古自治区">内蒙古自治区</li>
+							<li class="caller" data-id="210000" data-title="辽宁省">辽宁省</li>
+							<li class="caller" data-id="220000" data-title="吉林省">吉林省</li>
+							<li class="caller" data-id="230000" data-title="黑龙江省">黑龙江省</li>
+							<li class="caller" data-id="310000" data-title="上海市">上海市</li>
+							<li class="caller" data-id="320000" data-title="江苏省">江苏省</li>
+							<li class="caller" data-id="330000" data-title="浙江省">浙江省</li>
+							<li class="caller" data-id="340000" data-title="安徽省">安徽省</li>
+							<li class="caller" data-id="350000" data-title="福建省">福建省</li>
+							<li class="caller" data-id="360000" data-title="江西省">江西省</li>
+							<li class="caller" data-id="370000" data-title="山东省">山东省</li>
+							<li class="caller" data-id="410000" data-title="河南省">河南省</li>
+							<li class="caller" data-id="420000" data-title="湖北省">湖北省</li>
+							<li class="caller" data-id="430000" data-title="湖南省">湖南省</li>
+							<li class="caller" data-id="440000" data-title="广东省">广东省</li>
+							<li class="caller" data-id="450000" data-title="广西壮族自治区">广西壮族自治区</li>
+							<li class="caller" data-id="460000" data-title="海南省">海南省</li>
+							<li class="caller" data-id="500000" data-title="重庆市">重庆市</li>
+							<li class="caller" data-id="510000" data-title="四川省">四川省</li>
+							<li class="caller" data-id="520000" data-title="贵州省">贵州省</li>
+							<li class="caller" data-id="530000" data-title="云南省">云南省</li>
+							<li class="caller" data-id="540000" data-title="西藏自治区">西藏自治区</li>
+							<li class="caller" data-id="610000" data-title="陕西省">陕西省</li>
+							<li class="caller" data-id="620000" data-title="甘肃省">甘肃省</li>
+							<li class="caller" data-id="630000" data-title="青海省">青海省</li>
+							<li class="caller" data-id="640000" data-title="宁夏回族自治区">宁夏回族自治区</li>
+							<li class="caller" data-id="650000" data-title="新疆维吾尔自治区">新疆维吾尔自治区</li>
+							<li class="caller" data-id="710000" data-title="台湾省">台湾省</li>
+							<li class="caller" data-id="810000" data-title="香港特别行政区">香港特别行政区</li>
+							<li class="caller" data-id="820000" data-title="澳门特别行政区">澳门特别行政区</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey city" data-index="1">
+					<a href="javascript:;" class="selector-name reveal">天津市</a>
+					<input type="hidden" name="userCityId" class="input-price val-error" value="120100" data-required="userCityId">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller active" data-id="120100" data-title="天津市" data-code="022">天津市</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey district" data-index="2">
+					<a href="javascript:;" class="selector-name reveal">和平区</a>
+					<input type="hidden" name="userDistrictId" class="input-price val-error" value="120101" data-required="userDistrictId">
+					<div class="selector-list listing">
+						<ul>
+							<li class="caller active" data-id="120101" data-title="和平区" data-code="022">和平区</li>
+							<li class="caller" data-id="120102" data-title="河东区" data-code="022">河东区</li>
+							<li class="caller" data-id="120103" data-title="河西区" data-code="022">河西区</li>
+							<li class="caller" data-id="120104" data-title="南开区" data-code="022">南开区</li>
+							<li class="caller" data-id="120105" data-title="河北区" data-code="022">河北区</li>
+							<li class="caller" data-id="120106" data-title="红桥区" data-code="022">红桥区</li>
+							<li class="caller" data-id="120110" data-title="东丽区" data-code="022">东丽区</li>
+							<li class="caller" data-id="120111" data-title="西青区" data-code="022">西青区</li>
+							<li class="caller" data-id="120112" data-title="津南区" data-code="022">津南区</li>
+							<li class="caller" data-id="120113" data-title="北辰区" data-code="022">北辰区</li>
+							<li class="caller" data-id="120114" data-title="武清区" data-code="022">武清区</li>
+							<li class="caller" data-id="120115" data-title="宝坻区" data-code="022">宝坻区</li>
+							<li class="caller" data-id="120116" data-title="滨海新区" data-code="022">滨海新区</li>
+							<li class="caller" data-id="120221" data-title="宁河县" data-code="022">宁河县</li>
+							<li class="caller" data-id="120223" data-title="静海县" data-code="022">静海县</li>
+							<li class="caller" data-id="120225" data-title="蓟县" data-code="022">蓟县</li>
+						</ul>
+					</div>
+				</div>
+				<input type="hidden" role="code" name="cityCode" value="022">
+			</div>
+			<div class="code">
+				<a href="javascript:;" class="show-code">code</a>
+				<pre><code>var selector2 = $('#city-picker-selector2').cityPicker({
+					dataJson: cityData,
+					renderMode: true,
+					search: false,
+					autoSelected: true,
+					code: 'cityCode',
+					level: 3,
+					onChoiceEnd: function() {
+						console.log(this.values)
+					}
+				});
+	
+				// 设置城市
+				selector2.setCityVal('广东省, 广州市, 天河区');</code></pre>
+			</div>
+		</div>
+		<h3>模拟城市-联动/搜索/键盘操作/二级城市</h3>
+		<div class="dome-main">
+			<div class="city-picker-selector" id="city-picker-search">
+				<div class="selector-item storey province" data-index="0">
+					<a href="javascript:;" class="selector-name reveal df-color ">请选择省份</a>
+					<input type="hidden" name="userProvinceId" class="input-price val-error" value="" data-required="userProvinceId">
+					<div class="selector-list listing">
+						<div class="selector-search">
+							<input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+						</div>
+						<ul>
+							<li class="caller" data-id="110000" data-title="北京市">北京市</li>
+							<li class="caller" data-id="120000" data-title="天津市">天津市</li>
+							<li class="caller" data-id="130000" data-title="河北省">河北省</li>
+							<li class="caller" data-id="140000" data-title="山西省">山西省</li>
+							<li class="caller" data-id="150000" data-title="内蒙古自治区">内蒙古自治区</li>
+							<li class="caller" data-id="210000" data-title="辽宁省">辽宁省</li>
+							<li class="caller" data-id="220000" data-title="吉林省">吉林省</li>
+							<li class="caller" data-id="230000" data-title="黑龙江省">黑龙江省</li>
+							<li class="caller" data-id="310000" data-title="上海市">上海市</li>
+							<li class="caller" data-id="320000" data-title="江苏省">江苏省</li>
+							<li class="caller" data-id="330000" data-title="浙江省">浙江省</li>
+							<li class="caller" data-id="340000" data-title="安徽省">安徽省</li>
+							<li class="caller" data-id="350000" data-title="福建省">福建省</li>
+							<li class="caller" data-id="360000" data-title="江西省">江西省</li>
+							<li class="caller" data-id="370000" data-title="山东省">山东省</li>
+							<li class="caller" data-id="410000" data-title="河南省">河南省</li>
+							<li class="caller" data-id="420000" data-title="湖北省">湖北省</li>
+							<li class="caller" data-id="430000" data-title="湖南省">湖南省</li>
+							<li class="caller" data-id="440000" data-title="广东省">广东省</li>
+							<li class="caller" data-id="450000" data-title="广西壮族自治区">广西壮族自治区</li>
+							<li class="caller" data-id="460000" data-title="海南省">海南省</li>
+							<li class="caller" data-id="500000" data-title="重庆市">重庆市</li>
+							<li class="caller" data-id="510000" data-title="四川省">四川省</li>
+							<li class="caller" data-id="520000" data-title="贵州省">贵州省</li>
+							<li class="caller" data-id="530000" data-title="云南省">云南省</li>
+							<li class="caller" data-id="540000" data-title="西藏自治区">西藏自治区</li>
+							<li class="caller" data-id="610000" data-title="陕西省">陕西省</li>
+							<li class="caller" data-id="620000" data-title="甘肃省">甘肃省</li>
+							<li class="caller" data-id="630000" data-title="青海省">青海省</li>
+							<li class="caller" data-id="640000" data-title="宁夏回族自治区">宁夏回族自治区</li>
+							<li class="caller" data-id="650000" data-title="新疆维吾尔自治区">新疆维吾尔自治区</li>
+							<li class="caller" data-id="710000" data-title="台湾省">台湾省</li>
+							<li class="caller" data-id="810000" data-title="香港特别行政区">香港特别行政区</li>
+							<li class="caller" data-id="820000" data-title="澳门特别行政区">澳门特别行政区</li>
+						</ul>
+					</div>
+				</div>
+				<div class="selector-item storey city" data-index="1">
+					<a href="javascript:;" class="selector-name reveal df-color forbid">请选择城市</a>
+					<input type="hidden" name="userCityId" class="input-price val-error" value="" data-required="userCityId">
+					<div class="selector-list listing">
+						<div class="selector-search">
+							<input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+						</div>
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+			<div class="code">
+				<a href="javascript:;" class="show-code">code</a>
+				<pre><code>var selector3 = $('#city-picker-search').cityPicker({
+					dataJson: cityData,
+					renderMode: true,
+					search: true,
+					autoSelected: true,
+					keyboard: true,
+					level: 2,
+					onChoiceEnd: function() {
+						console.log(this.values)
+					}
+				});</code></pre>
+			</div>
+		</div>
+		<h3>模拟城市-联动/搜索/键盘操作/一级城市</h3>
+		<div class="dome-main">
+			<div class="city-picker-selector" id="city-picker-search2">
+				<div class="selector-item storey province" data-index="0">
+					<a href="javascript:;" class="selector-name reveal">天津市</a>
+					<input type="hidden" name="userProvinceId" class="input-price val-error" value="120000" data-required="userProvinceId">
+					<div class="selector-list listing">
+						<div class="selector-search">
+							<input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+						</div>
+						<ul>
+							<li class="caller" data-id="110000" data-title="北京市">北京市</li>
+							<li class="caller active" data-id="120000" data-title="天津市">天津市</li>
+							<li class="caller" data-id="130000" data-title="河北省">河北省</li>
+							<li class="caller" data-id="140000" data-title="山西省">山西省</li>
+							<li class="caller" data-id="150000" data-title="内蒙古自治区">内蒙古自治区</li>
+							<li class="caller" data-id="210000" data-title="辽宁省">辽宁省</li>
+							<li class="caller" data-id="220000" data-title="吉林省">吉林省</li>
+							<li class="caller" data-id="230000" data-title="黑龙江省">黑龙江省</li>
+							<li class="caller" data-id="310000" data-title="上海市">上海市</li>
+							<li class="caller" data-id="320000" data-title="江苏省">江苏省</li>
+							<li class="caller" data-id="330000" data-title="浙江省">浙江省</li>
+							<li class="caller" data-id="340000" data-title="安徽省">安徽省</li>
+							<li class="caller" data-id="350000" data-title="福建省">福建省</li>
+							<li class="caller" data-id="360000" data-title="江西省">江西省</li>
+							<li class="caller" data-id="370000" data-title="山东省">山东省</li>
+							<li class="caller" data-id="410000" data-title="河南省">河南省</li>
+							<li class="caller" data-id="420000" data-title="湖北省">湖北省</li>
+							<li class="caller" data-id="430000" data-title="湖南省">湖南省</li>
+							<li class="caller" data-id="440000" data-title="广东省">广东省</li>
+							<li class="caller" data-id="450000" data-title="广西壮族自治区">广西壮族自治区</li>
+							<li class="caller" data-id="460000" data-title="海南省">海南省</li>
+							<li class="caller" data-id="500000" data-title="重庆市">重庆市</li>
+							<li class="caller" data-id="510000" data-title="四川省">四川省</li>
+							<li class="caller" data-id="520000" data-title="贵州省">贵州省</li>
+							<li class="caller" data-id="530000" data-title="云南省">云南省</li>
+							<li class="caller" data-id="540000" data-title="西藏自治区">西藏自治区</li>
+							<li class="caller" data-id="610000" data-title="陕西省">陕西省</li>
+							<li class="caller" data-id="620000" data-title="甘肃省">甘肃省</li>
+							<li class="caller" data-id="630000" data-title="青海省">青海省</li>
+							<li class="caller" data-id="640000" data-title="宁夏回族自治区">宁夏回族自治区</li>
+							<li class="caller" data-id="650000" data-title="新疆维吾尔自治区">新疆维吾尔自治区</li>
+							<li class="caller" data-id="710000" data-title="台湾省">台湾省</li>
+							<li class="caller" data-id="810000" data-title="香港特别行政区">香港特别行政区</li>
+							<li class="caller" data-id="820000" data-title="澳门特别行政区">澳门特别行政区</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="code">
+				<a href="javascript:;" class="show-code">code</a>
+				<pre><code>var selector4 = $('#city-picker-search2').cityPicker({
+					dataJson: cityData,
+					renderMode: true,
+					search: true,
+					autoSelected: true,
+					keyboard: true,
+					level: 1,
+					onChoiceEnd: function() {
+						console.log(this.values)
+					}
+				});</code></pre>
+			</div>
+		</div>
+		<h3>原生城市-联动</h3>
+		<div class="dome-main">
+			<div class="city-picker-select">
+				<select name="userProvinceId" data-index="0" class="province">
+					<option>请选择省份</option>
+					<option class="caller" value="110000" data-id="110000" data-title="北京市">北京市</option>
+					<option class="caller" value="120000" data-id="120000" data-title="天津市">天津市</option>
+					<option class="caller" value="130000" data-id="130000" data-title="河北省">河北省</option>
+					<option class="caller" value="140000" data-id="140000" data-title="山西省">山西省</option>
+					<option class="caller" value="150000" data-id="150000" data-title="内蒙古自治区">内蒙古自治区</option>
+					<option class="caller" value="210000" data-id="210000" data-title="辽宁省">辽宁省</option>
+					<option class="caller" value="220000" data-id="220000" data-title="吉林省">吉林省</option>
+					<option class="caller" value="230000" data-id="230000" data-title="黑龙江省">黑龙江省</option>
+					<option class="caller" value="310000" data-id="310000" data-title="上海市">上海市</option>
+					<option class="caller" value="320000" data-id="320000" data-title="江苏省">江苏省</option>
+					<option class="caller" value="330000" data-id="330000" data-title="浙江省">浙江省</option>
+					<option class="caller" value="340000" data-id="340000" data-title="安徽省">安徽省</option>
+					<option class="caller" value="350000" data-id="350000" data-title="福建省">福建省</option>
+					<option class="caller" value="360000" data-id="360000" data-title="江西省">江西省</option>
+					<option class="caller" value="370000" data-id="370000" data-title="山东省">山东省</option>
+					<option class="caller" value="410000" data-id="410000" data-title="河南省">河南省</option>
+					<option class="caller" value="420000" data-id="420000" data-title="湖北省">湖北省</option>
+					<option class="caller" value="430000" data-id="430000" data-title="湖南省">湖南省</option>
+					<option class="caller" value="440000" data-id="440000" data-title="广东省">广东省</option>
+					<option class="caller" value="450000" data-id="450000" data-title="广西壮族自治区">广西壮族自治区</option>
+					<option class="caller" value="460000" data-id="460000" data-title="海南省">海南省</option>
+					<option class="caller" value="500000" data-id="500000" data-title="重庆市">重庆市</option>
+					<option class="caller" value="510000" data-id="510000" data-title="四川省">四川省</option>
+					<option class="caller" value="520000" data-id="520000" data-title="贵州省">贵州省</option>
+					<option class="caller" value="530000" data-id="530000" data-title="云南省">云南省</option>
+					<option class="caller" value="540000" data-id="540000" data-title="西藏自治区">西藏自治区</option>
+					<option class="caller" value="610000" data-id="610000" data-title="陕西省">陕西省</option>
+					<option class="caller" value="620000" data-id="620000" data-title="甘肃省">甘肃省</option>
+					<option class="caller" value="630000" data-id="630000" data-title="青海省">青海省</option>
+					<option class="caller" value="640000" data-id="640000" data-title="宁夏回族自治区">宁夏回族自治区</option>
+					<option class="caller" value="650000" data-id="650000" data-title="新疆维吾尔自治区">新疆维吾尔自治区</option>
+					<option class="caller" value="710000" data-id="710000" data-title="台湾省">台湾省</option>
+					<option class="caller" value="810000" data-id="810000" data-title="香港特别行政区">香港特别行政区</option>
+					<option class="caller" value="820000" data-id="820000" data-title="澳门特别行政区">澳门特别行政区</option>
+				</select>
+				<select name="userCityId" data-index="1" class="city">
+					<option class="caller" value="140100" data-id="140100" data-title="太原市">太原市</option>
+					<option class="caller" value="140200" data-id="140200" data-title="大同市">大同市</option>
+					<option class="caller" value="140300" data-id="140300" data-title="阳泉市">阳泉市</option>
+					<option class="caller" value="140400" data-id="140400" data-title="长治市">长治市</option>
+					<option class="caller" value="140500" data-id="140500" data-title="晋城市">晋城市</option>
+					<option class="caller" value="140600" data-id="140600" data-title="朔州市">朔州市</option>
+					<option class="caller" value="140700" data-id="140700" data-title="晋中市">晋中市</option>
+					<option class="caller" value="140800" data-id="140800" data-title="运城市">运城市</option>
+					<option class="caller" value="140900" data-id="140900" data-title="忻州市">忻州市</option>
+					<option class="caller" value="141000" data-id="141000" data-title="临汾市">临汾市</option>
+					<option class="caller" value="141100" data-id="141100" data-title="吕梁市">吕梁市</option>
+				</select>
+				<select name="userDistrictId" data-index="2" class="district">
+					<option class="caller" value="140105" data-id="140105" data-title="小店区">小店区</option>
+					<option class="caller" value="140106" data-id="140106" data-title="迎泽区">迎泽区</option>
+					<option class="caller" value="140107" data-id="140107" data-title="杏花岭区">杏花岭区</option>
+					<option class="caller" value="140108" data-id="140108" data-title="尖草坪区">尖草坪区</option>
+					<option class="caller" value="140109" data-id="140109" data-title="万柏林区">万柏林区</option>
+					<option class="caller" value="140110" data-id="140110" data-title="晋源区">晋源区</option>
+					<option class="caller" value="140121" data-id="140121" data-title="清徐县">清徐县</option>
+					<option class="caller" value="140122" data-id="140122" data-title="阳曲县">阳曲县</option>
+					<option class="caller" value="140123" data-id="140123" data-title="娄烦县">娄烦县</option>
+					<option class="caller" value="140181" data-id="140181" data-title="古交市">古交市</option>
+				</select>
+				<select name="userStreet" data-index="3" class="street">
+					<option class="caller" value="">请选择街道</option>
+					<option class="caller" value="140105001" data-id="140105001" data-title="坞城街道">坞城街道</option>
+					<option class="caller" value="140105002" data-id="140105002" data-title="营盘街道">营盘街道</option>
+					<option class="caller" value="140105003" data-id="140105003" data-title="北营街道">北营街道</option>
+					<option class="caller" value="140105004" data-id="140105004" data-title="平阳路街道">平阳路街道</option>
+					<option class="caller" value="140105005" data-id="140105005" data-title="黄陵街道">黄陵街道</option>
+					<option class="caller" value="140105006" data-id="140105006" data-title="小店街道">小店街道</option>
+					<option class="caller" value="140105007" data-id="140105007" data-title="龙城街道">龙城街道</option>
+					<option class="caller" value="140105100" data-id="140105100" data-title="北格镇">北格镇</option>
+					<option class="caller" value="140105200" data-id="140105200" data-title="西温庄乡">西温庄乡</option>
+					<option class="caller" value="140105201" data-id="140105201" data-title="刘家堡乡">刘家堡乡</option>
+				</select>
+			</div>
+			<div class="code">
+				<a href="javascript:;" class="show-code">code</a>
+				<pre><code>var select = $('.city-picker-select').cityPicker({
+					dataJson: cityData,
+					renderMode: false,
+					autoSelected: true,
+					level: 4,
+					onChoiceEnd: function() {
+						console.log(this.values)
+					}
+				});
+	
+				// 设置城市
+				select.setCityVal('山西省, 太原市, 小店区, 坞城街道');</code></pre>
+			</div>
+		</div>
+	</div>
+	<script src="./jquery-1.10.2.js.下载"></script>
+	<script src="./jquery.min.js(1).下载"></script>
+	<script type="text/javascript" src="./citydata.min.js.下载"></script>
+	<script type="text/javascript" src="./cityPicker-2.0.2.js.下载"></script>
+	<script type="text/javascript">
+		$(function () {
+			// 显示代码
+			$('.show-code').on('click', function (event) {
+				var $this = $(this);
+
+				$this.next('pre').slideToggle(500);
+			});
+
+			// 模拟城市-无联动/无搜索
+			var selector1 = $('#city-picker-selector1').cityPicker({
+				dataJson: cityData,
+				renderMode: true,
+				search: false,
+				autoSelected: false,
+				shorthand: true,
+				code: 'cityCode',
+				level: 4,
+				onChoiceEnd: function () {
+					console.log(this.values)
+				}
+			});
+
+			// 设置城市
+			selector1.setCityVal('广东省, 广州市, 天河区, 天园街道');
+
+			$('.btn-setcity').on('click', function (event) {
+				selector1.setCityVal('广东省, 深圳市, 罗湖区, 桂园街道');
+			});
+
+			// 获取城市值
+			$('.btn-obtain').on('click', function (event) {
+				alert(JSON.stringify(selector1.getCityVal()));
+			});
+
+			$('.btn-prohibit').on('click', function (event) {
+				selector1.changeStatus('disabled');
+			});
+
+			$('.btn-current').on('click', function (event) {
+				selector1.changeStatus('current');
+			});
+
+			// 模拟城市-无联动/无搜索
+			var selector2 = $('#city-picker-selector2').cityPicker({
+				dataJson: cityData,
+				renderMode: true,
+				search: false,
+				autoSelected: true,
+				code: 'cityCode',
+				level: 3,
+				onChoiceEnd: function () {
+					console.log(this.values)
+				}
+			});
+
+			// 设置城市
+			selector2.setCityVal('广东省, 广州市, 天河区');
+
+			// 模拟城市-联动/搜索/键盘操作
+			var selector3 = $('#city-picker-search').cityPicker({
+				dataJson: cityData,
+				renderMode: true,
+				search: true,
+				autoSelected: true,
+				keyboard: true,
+				level: 2,
+				onChoiceEnd: function () {
+					console.log(this.values)
+				}
+			});
+
+			// 模拟城市-联动/搜索/键盘操作
+			var selector4 = $('#city-picker-search2').cityPicker({
+				dataJson: cityData,
+				renderMode: true,
+				search: true,
+				autoSelected: true,
+				keyboard: true,
+				level: 1,
+				onChoiceEnd: function () {
+					console.log(this.values)
+				}
+			});
+
+			//原生城市-联动
+			var select = $('.city-picker-select').cityPicker({
+				dataJson: cityData,
+				renderMode: false,
+				autoSelected: true,
+				level: 4,
+				onChoiceEnd: function () {
+					console.log(this.values)
+				}
+			});
+
+			// 设置城市
+			select.setCityVal('山西省, 太原市, 小店区, 坞城街道');
+		});
+	</script>
+
+</body>
+
+</html>
